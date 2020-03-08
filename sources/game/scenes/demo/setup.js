@@ -1,7 +1,7 @@
 import {Camera} from 'modules/camera.js'
 import {Keyboard} from 'modules/keyboard.js';
 import {UP,DOWN,Z,S} from 'modules/keycodes.js';
-import {resize} from './resize.js';
+import {resizeCalc} from 'utils/resizeCalc.js';
 
 function setup() {
 
@@ -9,7 +9,8 @@ function setup() {
     this.camera = new Camera(this.context, this.size.width, this.size.height);
 
     this.zone=[];
-    resize.call(this);
+
+    resizeCalc.call(this);
 
     this.inputs = [];
 

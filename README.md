@@ -2,7 +2,8 @@
 
 # pingpong
 
-> Use up/down arrow for player 1 and z/s key for player 2 
+## Demo link : https://fabiencont.github.io/pingpong/
+> Use up/down arrow for player 1 and z/s key for player 2
 
 ## Overview
 
