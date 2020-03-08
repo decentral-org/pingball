@@ -4,22 +4,20 @@ const resizeCalc=function (){
   var zOffset=0;
   var width=width=this.size.width;
   var height=this.size.height;
+  var defaultSize=1024;
   var scale=1;
-  this.camera.set(0,0);
-  this.camera.size.width=this.size.width;
-  this.camera.size.height=this.size.height;
   if(this.size.width>this.size.height){
-    width=this.size.height;
-    xOffset=Math.ceil((this.size.width-this.size.height)/2);
-  }else if(this.size.width<this.size.height){
-
-    scale=Math.round((this.size.width/this.size.height + Number.EPSILON) * 100) / 100;
+    scale=Math.round((this.size.height/defaultSize) * 100) / 100;
     width=this.size.height;
     height=this.size.height;
-    yOffset=((this.size.height-this.size.width)/scale)/2;
-    xOffset=0
+    xOffset=(this.size.width-this.size.height)/2;
+  }else{
+    scale=Math.round((this.size.width/defaultSize) * 100) / 100;
+    width=this.size.width;
+    height=this.size.width;
+    yOffset=(this.size.height-this.size.width)/2;
   }
-  this.zone[0]={'x':xOffset,'y': yOffset,'z':zOffset,width:width,height:height,scale:scale};
+  this.zone[0]={'x':xOffset,'y': yOffset,'z':zOffset,width:width,height:height,scale:scale,refSize:1024};
 
 }
 

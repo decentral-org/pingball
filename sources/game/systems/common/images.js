@@ -36,9 +36,9 @@ function images(entities) {
                 },
                 'destination': {
 
-                    'x': (positionComponent.x + destination[0] + zoneComponent.frame[0].x) * zoneComponent.frame[0].scale,
-                    'y': (positionComponent.y + destination[1] + zoneComponent.frame[0].y) * zoneComponent.frame[0].scale,
-                    'z': (positionComponent.z + destination[2] + zoneComponent.frame[0].z) * zoneComponent.frame[0].scale,
+                    'x': ((positionComponent.x + destination[0]) *zoneComponent.frame[0].scale+ zoneComponent.frame[0].x),
+                    'y': ((positionComponent.y + destination[1])*zoneComponent.frame[0].scale + zoneComponent.frame[0].y),
+                    'z': ((positionComponent.z + destination[2])*zoneComponent.frame[0].scale + zoneComponent.frame[0].z),
                     'width': destination[3] * zoneComponent.frame[0].scale,
                     'height': destination[4] * zoneComponent.frame[0].scale
                 },

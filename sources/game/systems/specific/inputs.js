@@ -7,16 +7,16 @@ function inputs(entities) {
 
         const inputComponent = entity.get('input');
         var index= inputComponent.inputs.indexOf(input.action);
-        
+
         if (index !== -1 && input.state === 'DOWN') {
 
           switch (index) {
               case 0:
-                entity.add([new Forces([{x:0,y:-5,duration:10}])])
+                entity.add([new Forces([{x:0,y:-10,duration:15}])])
 
               break;
               case 1:
-                entity.add([new Forces([{x:0,y:5,duration:10}])])
+                entity.add([new Forces([{x:0,y:10,duration:15}])])
 
               break;
           }

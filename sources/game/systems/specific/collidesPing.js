@@ -11,8 +11,8 @@ function collidesPing(entities) {
     if(positionComponent.y<0){
       positionComponent.y=0;
       entity.remove('forces');
-    }else if(positionComponent.y+hitboxComponent.height>zoneComponent.frame[0].height){
-      positionComponent.y=zoneComponent.frame[0].height-hitboxComponent.height;
+    }else if(positionComponent.y+hitboxComponent.height>this.zone[0].refSize){
+      positionComponent.y=this.zone[0].refSize-hitboxComponent.height;
       entity.remove('forces');
     }
   });

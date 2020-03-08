@@ -10,11 +10,11 @@ function collidesBall(entities) {
 
     if(positionComponent.x<0){
       this.restart();
-    }else if(positionComponent.x+hitboxComponent.width>zoneComponent.frame[0].width){
+    }else if(positionComponent.x+hitboxComponent.width>this.zone[0].refSize){
       this.restart();
     }
 
-    if(positionComponent.y<0 || positionComponent.y+hitboxComponent.height>zoneComponent.frame[0].height){
+    if(positionComponent.y<0 || positionComponent.y+hitboxComponent.height>this.zone[0].refSize){
       entity.add([new Forces([{x:forcesComponent.parts[0].x,y:-forcesComponent.parts[0].y,duration:forcesComponent.parts[0].duration}])])
     }
   });
