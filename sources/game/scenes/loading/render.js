@@ -17,7 +17,7 @@ function render() {
     if (this.preloading === false) {
 
         this.context.fillText('$ preloading completed', 8, 32 + 24);
-        this.context.fillText('$ loading demo scene...', 8, 32 + 24 + 24);
+        this.context.fillText('$ loading menu scene...', 8, 32 + 24 + 24);
     }
 }
 

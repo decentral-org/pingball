@@ -1,9 +1,7 @@
-function Zone(frame) {
-  return{
-    name : 'zone',
+function Zone(zone) {
+    this.name = 'zone';
 
-    frame : frame
-  }
+    this.frame =zone;
 }
 
 export {Zone};

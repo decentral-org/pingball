@@ -1,13 +1,11 @@
 const path = require('path');
+const merge = require('webpack-merge');
 
-module.exports = {
-
-    'entry': './sources/index.js',
+module.exports =  merge(require('./webpack.common.alias.js'), {
+    'entry': './sources/client.js',
     'mode': 'none',
     'module': {
-
         'rules': [
-
             {
                 'test': /\.js$/,
                 'use': [
@@ -36,23 +34,7 @@ module.exports = {
         ]
     },
     'output': {
-
         'path': path.resolve(__dirname, 'dist/'),
         'filename': 'index.js'
-    },
-    'resolve': {
-
-        'alias': {
-
-            'assets': path.resolve(__dirname, 'sources/game/assets/'),
-            'components': path.resolve(__dirname, 'sources/game/components/'),
-            'entities': path.resolve(__dirname, 'sources/game/entities/'),
-            'scenes': path.resolve(__dirname, 'sources/game/scenes/'),
-            'systems': path.resolve(__dirname, 'sources/game/systems/'),
-            'utils': path.resolve(__dirname, 'sources/game/utils/'),
-
-            'core': path.resolve(__dirname, 'sources/theatre/core/'),
-            'modules': path.resolve(__dirname, 'sources/theatre/modules/')
-        }
     }
-};
+});

@@ -9,12 +9,14 @@ function collidesBall(entities) {
     var zoneComponent =entity.get('zone');
 
     if(positionComponent.x<0){
-      this.restart();
-    }else if(positionComponent.x+hitboxComponent.width>this.zone[0].refSize){
-      this.restart();
+      this.state.winner="P2";
+      this.load('ending');
+    }else if(positionComponent.x+hitboxComponent.width>zoneComponent.frame.refSize){
+      this.state.winner="P1";
+      this.load('ending');
     }
 
-    if(positionComponent.y<0 || positionComponent.y+hitboxComponent.height>this.zone[0].refSize){
+    if(positionComponent.y<0 || positionComponent.y+hitboxComponent.height>zoneComponent.frame.refSize){
       entity.add([new Forces([{x:forcesComponent.parts[0].x,y:-forcesComponent.parts[0].y,duration:forcesComponent.parts[0].duration}])])
     }
   });

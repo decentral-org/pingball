@@ -11,7 +11,7 @@ function Ball(x,y) {
 const entity=new Entity(
   'ball', [
       new Camera(this.camera),
-      Zone(this.zone),
+      new Zone(this.zones.gameLayout),
       new Position(x,y,1),
       new Forces([{x:-5,y:0,duration:30}]),
       new Hitbox(32,32),

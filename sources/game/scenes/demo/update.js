@@ -1,20 +1,27 @@
 import {forces} from 'systems/common/forces.js';
-import {inputs} from 'systems/specific/inputs.js';
 import {collides} from 'systems/specific/collides.js';
 import {collidesBall} from 'systems/specific/collidesBall.js';
 import {collidesPing} from 'systems/specific/collidesPing.js';
+import {emitInputs} from 'client/socketUtils';
 
 function update() {
 
     // console.log('update demo scene');
 
-    this.world.system(['forces','position'], forces);
-    this.world.system(['input'], inputs);
-    this.world.system(['hitbox','position'], collides);
-    this.world.system(['hitbox','position','sphere'], collidesBall);
-    this.world.system(['hitbox','position','ping'], collidesPing);
+    if(this.inputs.length!=0){
+      emitInputs(this.inputs);
+    }
 
     this.inputs.length = 0;
+    if(this.entitiesBuffer.length>0){
+      this.entitiesBuffer.forEach((entity) => {
+        let worldEntity=this.world.get(entity.name)
+        worldEntity.get('position').x=entity.components[0].x;
+        worldEntity.get('position').y=entity.components[0].y;
+      });
+    }
+
+    this.entitiesBuffer=[]
 }
 
 export {update};

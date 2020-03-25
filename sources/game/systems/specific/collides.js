@@ -21,9 +21,12 @@ function collides(entities) {
           if(collide(rectangle,otherRectangle)){
             var collideDist=collideDistance(rectangle,otherRectangle);
 
-            var xForces=collideDist.x>0?5:-5;
+            var xForces=collideDist.x>0?forcesComponent.parts[0].x+5:-forcesComponent.parts[0].x-5;
+            if(Math.abs(xForces>30))xForces<0?-30:30
             var otherEntityForces=otherEntity.get('forces');
-            var yForces=collideDist.y+forcesComponent.parts[0].y;
+            var yForces=0;
+            //yForces+=collideDist.y+forcesComponent.parts[0].y;
+            yForces-=(((otherRectangle.y+(otherRectangle.height/2))-((rectangle.y+(rectangle.height/2))))/10);
             if(otherEntityForces && otherEntityForces.parts.length>0 ){
               yForces+= otherEntityForces.parts[0].y;
             }

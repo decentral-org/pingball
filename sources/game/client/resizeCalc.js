@@ -11,14 +11,22 @@ const resizeCalc=function (){
     width=this.size.height;
     height=this.size.height;
     xOffset=(this.size.width-this.size.height)/2;
+
   }else{
     scale=Math.round((this.size.width/defaultSize) * 100) / 100;
     width=this.size.width;
     height=this.size.width;
     yOffset=(this.size.height-this.size.width)/2;
   }
-  this.zone[0]={'x':xOffset,'y': yOffset,'z':zOffset,width:width,height:height,scale:scale,refSize:1024};
-
+  this.camera.size.width=this.size.width;
+  this.camera.size.height=this.size.height;
+  this.zones.gameLayout.x=xOffset;
+  this.zones.gameLayout.y=yOffset;
+  this.zones.gameLayout.z=zOffset;
+  this.zones.gameLayout.width=width;
+  this.zones.gameLayout.height=height;
+  this.zones.gameLayout.scale=scale;
+  this.zones.gameLayout.refSize=1024;
 }
 
 export{resizeCalc};

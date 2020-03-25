@@ -6,7 +6,7 @@ function update() {
 
         setTimeout(() => {
 
-            this.load('demo');
+            this.load('menu');
 
         }, 3000);
 

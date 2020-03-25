@@ -36,11 +36,11 @@ function images(entities) {
                 },
                 'destination': {
 
-                    'x': ((positionComponent.x + destination[0]) *zoneComponent.frame[0].scale+ zoneComponent.frame[0].x),
-                    'y': ((positionComponent.y + destination[1])*zoneComponent.frame[0].scale + zoneComponent.frame[0].y),
-                    'z': ((positionComponent.z + destination[2])*zoneComponent.frame[0].scale + zoneComponent.frame[0].z),
-                    'width': destination[3] * zoneComponent.frame[0].scale,
-                    'height': destination[4] * zoneComponent.frame[0].scale
+                    'x': ((positionComponent.x + destination[0]) *zoneComponent.frame.scale+ zoneComponent.frame.x),
+                    'y': ((positionComponent.y + destination[1])*zoneComponent.frame.scale + zoneComponent.frame.y),
+                    'z': ((positionComponent.z + destination[2])*zoneComponent.frame.scale + zoneComponent.frame.z),
+                    'width': destination[3] * zoneComponent.frame.scale,
+                    'height': destination[4] * zoneComponent.frame.scale
                 },
                 'opacity': cameraComponent.opacity * opacity
             });

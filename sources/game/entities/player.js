@@ -12,7 +12,7 @@ function Player(number,command,x,y) {
 const entity=new Entity(
   'player'+number, [
       new Camera(this.camera),
-      Zone(this.zone),
+      new Zone(this.zones.gameLayout),
       new Position(x,y,1),
       new Ping(),
       new Hitbox(32,96),

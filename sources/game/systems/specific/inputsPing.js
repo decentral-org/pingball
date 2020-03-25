@@ -1,6 +1,6 @@
 import {Forces} from 'components/common/forces.js';
 
-function inputs(entities) {
+function inputsPing(entities) {
     Object.entries(entities).forEach(([name, entity]) => {
 
       this.inputs.forEach((input) => {
@@ -40,4 +40,4 @@ function inputs(entities) {
   });
 }
 
-export {inputs};
+export {inputsPing};
