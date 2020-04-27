@@ -1,5 +1,6 @@
 import {images} from 'systems/common/images.js';
 import {renderButton} from 'systems/specific/renderButton.js';
+import {renderText} from 'systems/specific/renderText.js';
 
 function render() {
 
@@ -12,7 +13,8 @@ function render() {
     this.context.fillRect(this.zones.gameLayout.x ,this.zones.gameLayout.y, this.zones.gameLayout.width, this.zones.gameLayout.height);
 
     this.world.system(['images','position'], images);
-    this.world.system(['text','position'], renderButton);
+    this.world.system(['text','position','not:border'], renderText);
+    this.world.system(['text','border','position'], renderButton);
     this.camera.render();
 }
 

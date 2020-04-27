@@ -2,7 +2,7 @@ import {Camera} from 'modules/camera.js'
 import {Keyboard} from 'modules/keyboard.js';
 import {UP,DOWN,Z,S} from 'modules/keycodes.js';
 import {resizeCalc} from 'client/resizeCalc.js';
-import {connectToGame,emitStartGameSession,listenUpdateEntities,onEndGameSesion} from 'client/socketUtils.js';
+import {listenUpdateEntities,onEndGameSesion} from 'client/socketUtils.js';
 
 function setup() {
 
@@ -16,10 +16,8 @@ function setup() {
     this.inputs = [];
     this.entitiesBuffer=[];
 
-    this.keyboard = new Keyboard([UP,DOWN,Z,S], this.inputs);
+    this.keyboard = new Keyboard([UP,DOWN], this.inputs);
 
-    connectToGame();
-    emitStartGameSession();
     listenUpdateEntities((entitiesBuffer)=>{
       this.entitiesBuffer=entitiesBuffer;
     })

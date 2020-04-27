@@ -22,7 +22,7 @@ function inputsButton(entities) {
               if(this.state.mode=="offline"){
                 this.load('demoOffline')
               }else if(this.state.mode=="online"){
-                this.load('demo')
+                this.load('demoWaitingScreen')
               }
             break;
         }

@@ -9,7 +9,9 @@ function update() {
     // console.log('update demo scene');
 
     this.world.system(['input'], inputsPing);
-
+    if(this.gameReady){
+      this.load('demo')
+    }
     this.inputs.length = 0;
 }
 

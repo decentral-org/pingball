@@ -20,10 +20,20 @@ const onEndGameSesion=function(handler){
     handler(data);
   });
 };
-const emitStartGameSession=function(){
-  socketClient.emit('startGameSession');
-  console.log("startGameSession");
+
+const onStartGameSession=function(handler){
+  socketClient.on('startGameSession', function (data) {
+    console.log("startGameSession");
+    handler(data);
+  });
 };
+const onPlayerSelected=function(handler){
+  socketClient.on('playerSelected', function (data) {
+    console.log("playerSelected",data);
+    handler(data);
+  });
+};
+
 
 const emitInputs=function(inputs){
   socketClient.emit('inputs',inputs);
@@ -34,4 +44,4 @@ const emit=function(element){
   socketClient.emit('emit',element);
 }
 
-export {connectToGame,emitStartGameSession,listenUpdateEntities,emitInputs,emit,onEndGameSesion};
+export {connectToGame,onStartGameSession,onPlayerSelected,listenUpdateEntities,emitInputs,emit,onEndGameSesion};

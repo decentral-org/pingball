@@ -1,5 +1,5 @@
 import {forces} from 'systems/common/forces.js';
-import {inputsPing} from 'systems/specific/inputsPing.js';
+import {inputsPingServer} from 'systems/specific/inputsPingServer.js';
 import {collides} from 'systems/specific/collides.js';
 import {collidesBall} from 'systems/specific/collidesBall.js';
 import {collidesPing} from 'systems/specific/collidesPing.js';
@@ -7,7 +7,7 @@ import {collidesPing} from 'systems/specific/collidesPing.js';
 function update() {
 
     this.world.system(['forces','position'], forces);
-    this.world.system(['input'], inputsPing);
+    this.world.system(['input'], inputsPingServer);
     this.world.system(['hitbox','position'], collides);
     this.world.system(['hitbox','position','sphere'], collidesBall);
     this.world.system(['hitbox','position','ping'], collidesPing);
@@ -19,10 +19,11 @@ function update() {
     });
 
     if(entitiesModif.length!=0){
-      this.socket.emit('updateEntities', entitiesModif);
+      this.room.io.to(this.room.room).emit('updateEntities', entitiesModif);
     }
     //emit
-    this.inputs.length = 0;
+    this.player1.inputs = [];
+    this.player2.inputs = [];
 }
 
 export {update};

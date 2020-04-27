@@ -4,6 +4,7 @@ function destroy() {
     console.log('-------');
 
     delete this.state.redirect;
+    delete this.gameReady;
 }
 
 export {destroy};

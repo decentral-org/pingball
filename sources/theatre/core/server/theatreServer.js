@@ -4,7 +4,7 @@ import {fakePreload} from 'core/server/fakePreload.js';
 
 function TheatreServer(config) {
 
-    const {assets, container, scenes, socket} = config;
+    const {assets, container, scenes,room} = config;
 
     const expose = config.expose || false;
     const framerate = config.framerate || 60;
@@ -96,7 +96,7 @@ function TheatreServer(config) {
     this.preloading = false;
     this.scenes = scenes;
     this.size = size;
-    this.socket = socket;
+    this.room=room;
     this.state = {};
     this.version = '0.33.0';
 
