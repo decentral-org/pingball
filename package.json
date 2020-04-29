@@ -32,7 +32,6 @@
         "build":"webpack --config ./webpack.server.production.js --colors --display-error-details",
         "start":"node startServer.js",
         "dist": "webpack --config webpack.production.js",
-        "postinstall": "npm run dist",
         "server": "node startServer.js --watch build/server.js",
         "server:prod": "node'startServer.js'",
         "build:server": "webpack --watch --progress --config ./webpack.server.development.js --colors --display-error-details",
