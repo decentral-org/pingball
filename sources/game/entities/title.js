@@ -4,7 +4,7 @@ import {Position} from 'components/common/position.js';
 import {Zone} from 'components/common/zone.js';
 import {Hitbox} from 'components/common/hitbox.js';
 import {Text} from 'components/specific/text.js';
-import {Border} from 'components/specific/Border.js';
+import {Border} from 'components/specific/border.js';
 
 function Title(x,y,text) {
 const entity=new Entity(
