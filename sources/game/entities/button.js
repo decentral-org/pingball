@@ -3,8 +3,8 @@ import {Camera} from 'components/common/camera.js';
 import {Position} from 'components/common/position.js';
 import {Zone} from 'components/common/zone.js';
 import {Text} from 'components/specific/text.js';
-import {Border} from 'components/specific/Border.js';
-import {Selected} from 'components/specific/Selected.js';
+import {Border} from 'components/specific/border.js';
+import {Selected} from 'components/specific/selected.js';
 import {Input} from 'components/specific/input.js';
 
 
