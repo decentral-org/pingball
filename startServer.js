@@ -2,4 +2,5 @@
 require('source-map-support/register')
 
 var server = require('./distServer/server.js');
-server.start();
+var port = process.env.PORT || 3000;
+server.start(port);
