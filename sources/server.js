@@ -76,8 +76,8 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
-exports.start = function startServer(){
-  httpServer.listen(3000, function(){
-    console.log('listening on *:3000');
+exports.start = function startServer(port){
+  httpServer.listen(port, function(){
+    console.log('listening on *:'+port);
   });
 }

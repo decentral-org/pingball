@@ -1,4 +1,4 @@
-import {Selected} from 'components/specific/Selected.js';
+import {Selected} from 'components/specific/selected.js';
 
 function inputsButton(entities) {
 
