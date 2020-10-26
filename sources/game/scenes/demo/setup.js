@@ -15,11 +15,14 @@ function setup() {
 
     this.inputs = [];
     this.entitiesBuffer=[];
-
+    this.deltaBuffer=0;
+    this.oldDeltaBuffer=0;
+    this.timestamp=new Date();
     this.keyboard = new Keyboard([UP,DOWN], this.inputs);
 
-    listenUpdateEntities((entitiesBuffer)=>{
-      this.entitiesBuffer=entitiesBuffer;
+    listenUpdateEntities((buffer)=>{
+      this.entitiesBuffer=buffer.entities;
+      this.deltaBuffer=buffer.delta;
     })
 
     onEndGameSesion((winner)=>{

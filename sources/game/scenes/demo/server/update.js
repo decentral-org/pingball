@@ -15,11 +15,14 @@ function update() {
     let entitiesModif=[]
     Object.entries(this.world.entities).forEach(([name, entity]) => {
         let positionComponent=entity.get('position');
-        entitiesModif.push({'name':name,'components':[positionComponent]})
+        let forcesComponent=entity.get('forces');
+        entitiesModif.push({'name':name,'components':[positionComponent,forcesComponent]})
     });
 
     if(entitiesModif.length!=0){
-      this.room.io.to(this.room.room).emit('updateEntities', entitiesModif);
+      setTimeout(()=>{
+        this.room.io.to(this.room.room).emit('updateEntities',{'entities':entitiesModif,'currentUpdate':this.currentUpdate});
+      },Math.floor(Math.random() * Math.floor(1000)))
     }
     //emit
     this.player1.inputs = [];

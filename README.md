@@ -5,6 +5,23 @@
 ## Demo link : https://fabiencont.github.io/pingpong/
 > Use up/down arrow for player 1 and z/s key for player 2
 
+## Docker
+
+> build server :
+> docker build . -t pingball
+
+> build client :
+> docker build -f DockerfileClient -t pingballclient .
+
+> run server :
+> docker run --publish 3000:3000 --detach --name pgs pingball
+
+> run client :
+> docker run --publish 8888:8888 --detach --name pgc pingballclient
+
+> remove container :
+> docker rm --force pgs
+
 ## Overview
 
 > *Game development is in progress...*

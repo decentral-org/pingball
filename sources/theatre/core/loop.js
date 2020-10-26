@@ -22,7 +22,7 @@ function Loop(framerate = 60, speed = 1) {
     function update(handler) {
 
         const currentUpdate = Date.now();
-
+        this.currentUpdate=currentUpdate;
         if (lastUpdate !== null) {
 
             // define elapsed time since last update
@@ -49,6 +49,7 @@ function Loop(framerate = 60, speed = 1) {
 
     this.render = render;
     this.update = update;
+    this.currentUpdate=0;
 }
 
 // exports current module as an object
