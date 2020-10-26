@@ -5,7 +5,8 @@ function setup() {
     this.zones.gameLayout.refSize=1024;
     this.player1={inputs: []};
     this.player2={inputs: []};
-
+    this.startDate=new Date();
+    
     this.room.sockets.forEach((socket, i) => {
       socket.on('inputs', (inputs)=>{
           if(i==0){

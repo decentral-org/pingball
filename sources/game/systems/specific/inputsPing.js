@@ -9,7 +9,6 @@ function inputsPing(entities) {
         var index= inputComponent.inputs.indexOf(input.action);
 
         if (index !== -1 && input.state === 'DOWN') {
-
           switch (index) {
               case 0:
                 entity.add([new Forces([{x:0,y:-10,duration:15}])])
