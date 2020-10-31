@@ -8,13 +8,13 @@
         "url-loader": "1.0.1",
         "webpack": "4.18.0",
         "webpack-cli": "3.1.0",
-        "webpack-dev-server": "3.1.8",
+        "webpack-dev-server": "^3.11.0",
         "webpack-merge": "4.1.4",
         "webpack-node-externals": "^1.7.2",
         "webpack-notifier": "1.6.0"
     },
     "engines": {
-      "node": "12.16.x"
+        "node": "12.16.x"
     },
     "homepage": "",
     "keywords": [
@@ -29,15 +29,13 @@
         "url": ""
     },
     "scripts": {
-        "build":"webpack --config ./webpack.server.production.js --colors --display-error-details",
-        "start":"node startServer.js",
-        "dist": "webpack --config webpack.production.js",
-        "server": "node startServer.js --watch build/server.js",
-        "server:prod": "node'startServer.js'",
-        "dev:server": "webpack --watch --progress --config ./webpack.server.development.js --colors --display-error-details",
-        "build:server": "webpack --config ./webpack.server.development.js --colors --display-error-details",
-        "dev": "webpack-dev-server --config webpack.development.js",
-        "test": "echo \"Hello, friend.\" && exit 0"
+        "build:client": "webpack --config ./webpack.production.js --colors --display-error-details",
+        "build:server": "webpack --config ./webpack.server.production.js --colors --display-error-details",
+        "server:dev:run": "node startServer.js",
+        "server:dev:watch": "webpack --watch --progress --config ./webpack.server.development.js --colors --display-error-details",
+        "server:prod": "node startServer.js",
+        "client:dev": "webpack-dev-server --config webpack.development.js",
+        "client:prod": "webpack-dev-server --config webpack.development.js"
     },
     "dependencies": {
         "express": "^4.17.1",

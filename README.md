@@ -8,10 +8,10 @@
 ## Docker
 
 > build server :
-> docker build . -t pingball
+> docker build -t pingball .  --build-arg arg=server
 
 > build client :
-> docker build -f DockerfileClient -t pingballclient .
+> docker build -t pingballclient .  --build-arg arg=client
 
 > run server :
 > docker run --publish 3000:3000 --detach --name pgs pingball
