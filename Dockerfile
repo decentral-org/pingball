@@ -8,8 +8,12 @@ ADD . .
 
 RUN npm install
 
-RUN npm run build:server
+ARG arg
 
-EXPOSE 3000
+RUN if [ "$arg" = "" ] ; then echo Argument not provided ; else echo Argument is $arg ; fi
 
-CMD npm run server:prod
+RUN npm run build:$arg
+
+ENV VAR=$arg
+
+CMD npm run ${VAR}:prod
