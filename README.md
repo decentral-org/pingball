@@ -1,26 +1,15 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-# pingpong
+# Pingball
 
-## Demo link : https://fabiencont.github.io/pingpong/
-> Use up/down arrow for player 1 and z/s key for player 2
+> Use up/down arrow for player 1 and z/s key for player 2  
 
-## Docker
+## Build & Run locally
 
-> build server :
-> docker build -t pingball .  --build-arg arg=server
+> docker-compose build  
+> docker-compose up
 
-> build client :
-> docker build -t pingballclient .  --build-arg arg=client
-
-> run server :
-> docker run --publish 3000:3000 --detach --name pgs pingball
-
-> run client :
-> docker run --publish 8888:8888 --detach --name pgc pingballclient
-
-> remove container :
-> docker rm --force pgs
+Launch client by accessing `localhost:8888`  
 
 ## Overview
 
