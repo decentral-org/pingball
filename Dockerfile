@@ -12,4 +12,4 @@ RUN npm run build:server
 
 EXPOSE 3000
 
-CMD npm run server
+CMD npm run server:prod

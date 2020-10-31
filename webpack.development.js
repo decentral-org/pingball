@@ -9,11 +9,12 @@ module.exports = merge(require('./webpack.common.js'), {
         'clientLogLevel': 'warning',
         'contentBase': path.resolve(__dirname, 'dist/'),
         'hot': true,
-        'open': true,
         'overlay': {
             'warnings': true,
             'errors': true
         },
+        'host': '0.0.0.0',
+        'disableHostCheck': true,
         'port': 8888,
         'watchContentBase': true
     },

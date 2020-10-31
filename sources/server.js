@@ -20,6 +20,10 @@ const allRooms={};
   res.sendFile(__dirname + '/dist/index.html');
 });*/
 
+app.get('/alive', function(req, res){
+  console.log('/ alive');
+  res.send('Alive!')
+});
 
 const createRoom=function(){
   nbRoom++;
@@ -79,5 +83,12 @@ io.sockets.on('connection', function (socket) {
 exports.start = function startServer(port){
   httpServer.listen(port, function(){
     console.log('listening on *:'+port);
+  });
+}
+
+exports.stop = function stopServer(callback){
+  console.log("stop");
+  httpServer.close(function(){
+    callback();
   });
 }
