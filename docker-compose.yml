@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/live"]
+
+  client:
+    build:
+      context: .
+    environment:
+      START_AS_CLIENT: "true"
+    depends_on:
+      - server
+    ports:
+      - 8888:8888
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888"]

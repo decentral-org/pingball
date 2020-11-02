@@ -1,19 +1,18 @@
 FROM node:12.16
 
-RUN mkdir projectPing
+WORKDIR /app
 
-WORKDIR ./projectPing
-
-ADD . .
+ADD package.json .
 
 RUN npm install
 
-ARG arg
+ADD . .
 
-RUN if [ "$arg" = "" ] ; then echo Argument not provided ; else echo Argument is $arg ; fi
+RUN npm run build:server
 
-RUN npm run build:$arg
+RUN npm run build:client
 
-ENV VAR=$arg
+# be able to start as client if needed
+ENTRYPOINT ["./entrypoint.sh"]
 
-CMD npm run ${VAR}:prod
+CMD npm run server:prod
