@@ -7,13 +7,14 @@ services:
     ports:
       - 3000:3000
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/live"]
+      test: ["CMD", "curl", "-f", "http://localhost:3000/alive"]
 
   client:
     build:
       context: .
     environment:
       START_AS_CLIENT: "true"
+      BACKEND_ENDPOINT: "http://server:3000"
     depends_on:
       - server
     ports:
