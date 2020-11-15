@@ -5,7 +5,9 @@ set -e
 
 # Start as client
 if [ "$START_AS_CLIENT" == "true" ]; then
-    npm run client:prod
+    chmod +x app_conf_envsubst.sh
+    ./app_conf_envsubst.sh
+    nginx -g 'daemon off;'
 else # or by default: start what is defined in CMD
     exec "$@"
 fi
