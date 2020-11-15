@@ -20,9 +20,8 @@ function update() {
     });
 
     if(entitiesModif.length!=0){
-      setTimeout(()=>{
-        this.room.io.to(this.room.room).emit('updateEntities',{'entities':entitiesModif,'currentUpdate':this.currentUpdate});
-      },Math.floor(Math.random() * Math.floor(1000)))
+        this.room.io.to(this.room.room).emit('updateEntities',{'entities':entitiesModif});
+
     }
     //emit
     this.player1.inputs = [];
