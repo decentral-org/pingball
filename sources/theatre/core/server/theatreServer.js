@@ -25,7 +25,6 @@ function TheatreServer(config) {
         this.delta = {};
         this.delta.render = 0;
         this.delta.update = 0;
-
         this.scene = this.scenes.loading;
         this.scene.setup.call(this);
         this.scene.start.call(this);
